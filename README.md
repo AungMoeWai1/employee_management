@@ -1,1 +1,2 @@
 # testrule
+test
