@@ -1,0 +1,72 @@
+
+<odoo>
+
+    <!-- Employee Form View -->
+    <record id="employee_form_view" model="ir.ui.view">
+        <field name="name">employee.management.form</field>
+        <field name="model">employee.management</field>
+        <field name="arch" type="xml">
+            <form string="Employee">
+                <sheet>
+                    <group>
+                        <group string="Personal Information">
+                            <field name="name"/>
+                            <field name="employee_code"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="email"/>
+                        </group>
+
+                        <group string="Contact Information">
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="salary"/>
+                            <field name="joining_date"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Employee Tree View -->
+    <record id="view_employee_management_list" model="ir.ui.view">
+        <field name="name">employee.management.list</field>
+        <field name="model">employee.management</field>
+        <field name="arch" type="xml">
+            <tree string="Employees">
+                <field name="name"/>
+                <field name="employee_code"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="phone"/>
+                <field name="address"/>
+                <field name="salary"/>
+                <field name="joining_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Employee Action -->
+    <record id="employee_action" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="res_model">employee.management</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Root Menu -->
+    <menuitem id="employee_menu_root"
+              name="Employee Management"
+              sequence="10"/>
+
+    <!-- Employee Sub Menu -->
+    <menuitem id="employee_menu"
+              name="Employees"
+              parent="employee_menu_root"
+              action="employee_action"
+              sequence="10"/>
+
+</odoo>
